@@ -3,8 +3,6 @@ package com.example.caloriecounter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,8 +12,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.caloriecounter.navigation.navigate
 import com.example.caloriecounter.ui.theme.CalorieCounterTheme
 import com.example.core.navigation.Route
+import com.example.onboarding_presentation.gender.GenderScreen
 import com.example.onboarding_presentation.welcome.WelcomeScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,9 @@ class MainActivity : ComponentActivity() {
 
                     }
                     composable(Route.GENDER) {
-
+                        GenderScreen (onNavigate = {
+                            navController.navigate(it)
+                        })
                     }
                     composable(Route.HEIGHT) {
 
