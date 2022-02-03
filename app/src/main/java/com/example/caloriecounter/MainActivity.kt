@@ -18,6 +18,8 @@ import com.example.caloriecounter.ui.theme.CalorieCounterTheme
 import com.example.core.navigation.Route
 import com.example.onboarding_presentation.age.AgeScreen
 import com.example.onboarding_presentation.gender.GenderScreen
+import com.example.onboarding_presentation.height.HeightScreen
+import com.example.onboarding_presentation.weight.WeightScreen
 import com.example.onboarding_presentation.welcome.WelcomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,15 +49,23 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.GENDER) {
-                            GenderScreen (onNavigate = {
-                                navController.navigate(it)
-                            })
+                            GenderScreen (onNavigate = { navController.navigate(it) })
                         }
                         composable(Route.HEIGHT) {
-
+                            HeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = {
+                                    navController.navigate(it)
+                                }
+                            )
                         }
                         composable(Route.WEIGHT) {
-
+                            WeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = {
+                                    navController.navigate(it)
+                                }
+                            )
                         }
                         composable(Route.NUTRIENT_GOAL) {
 
