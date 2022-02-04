@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.domain.model.ActivityLevel
 import com.example.core.domain.model.GoalType
 import com.example.core.domain.preferences.Preferences
 import com.example.core.navigation.Route
@@ -25,7 +24,7 @@ class GoalViewModel @Inject constructor(
     var selectedGoal by mutableStateOf<GoalType>(
         GoalType.KeepWeight
     )
-    private set
+        private set
     //We shouldn't be able to change this from outside
 
     private val _uiEvent: Channel<UiEvent> = Channel<UiEvent>()

@@ -22,7 +22,7 @@ class NutrientGoalViewModel @Inject constructor(
     private val preferences: Preferences,
     private val filterOutDigits: FilterOutDigits,
     private val validateNutrients: ValidateNutrients
-): ViewModel() {
+) : ViewModel() {
 
     var state by mutableStateOf(NutrientGoalState())
         private set
@@ -31,7 +31,7 @@ class NutrientGoalViewModel @Inject constructor(
     val uiEvent: Flow<UiEvent> = _uiEvent.receiveAsFlow()
 
     fun onEvent(event: NutrientGoalEvent) {
-        when(event) {
+        when (event) {
             is NutrientGoalEvent.OnCarbRatioEnter -> {
                 state = state.copy(
                     carbsRatio = filterOutDigits(event.ratio)
@@ -53,7 +53,7 @@ class NutrientGoalViewModel @Inject constructor(
                     proteinRatioText = state.proteinRatio,
                     fatRatioText = state.fatRatio,
                 )
-                when(result) {
+                when (result) {
                     is ValidateNutrients.Result.Success -> {
                         preferences.saveCarbRatio(result.carbsRatio)
                         preferences.saveProteinRatio(result.proteinRatio)

@@ -22,7 +22,7 @@ class GenderViewModel @Inject constructor(
 ) : ViewModel() {
 
     var selectedGender by mutableStateOf<Gender>(Gender.Male)
-    private set
+        private set
     //We shouldn't be able to change this from outside
 
     private val _uiEvent: Channel<UiEvent> = Channel<UiEvent>()

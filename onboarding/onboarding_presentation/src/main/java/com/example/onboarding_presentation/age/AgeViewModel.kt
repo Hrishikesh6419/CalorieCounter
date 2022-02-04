@@ -21,7 +21,7 @@ import javax.inject.Inject
 class AgeViewModel @Inject constructor(
     private val preferences: Preferences,
     private val filterOutDigits: FilterOutDigits
-): ViewModel() {
+) : ViewModel() {
 
     var age by mutableStateOf("20")
         private set
@@ -30,7 +30,7 @@ class AgeViewModel @Inject constructor(
     val uiEvent = _uiEvent.receiveAsFlow()
 
     fun onAgeEnter(age: String) {
-        if(age.length <= 3) {
+        if (age.length <= 3) {
             this.age = filterOutDigits(age)
         }
     }
