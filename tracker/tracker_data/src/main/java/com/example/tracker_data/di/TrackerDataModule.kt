@@ -1,9 +1,13 @@
 package com.example.tracker_data.di
 
+import android.app.Application
+import androidx.room.Room
+import com.example.tracker_data.local.TrackerDatabase
 import com.example.tracker_data.remote.OpenFoodApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,7 +17,7 @@ import javax.inject.Singleton
 
 
 @Module
-@InstallIn
+@InstallIn(SingletonComponent::class)
 object TrackerDataModule {
 
     @Provides
@@ -36,5 +40,15 @@ object TrackerDataModule {
             .client(client)
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTrackerDatabase(app: Application): TrackerDatabase {
+        return Room.databaseBuilder(
+            app,
+            TrackerDatabase::class.java,
+            "tracker_db"
+        ).build()
     }
 }
