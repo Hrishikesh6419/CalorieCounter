@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.domain.model.ActivityLevel
-import com.example.core.domain.model.Gender
 import com.example.core.domain.preferences.Preferences
 import com.example.core.navigation.Route
 import com.example.core.util.UiEvent
@@ -25,7 +24,7 @@ class ActivityViewModel @Inject constructor(
     var selectedActivityLevel by mutableStateOf<ActivityLevel>(
         ActivityLevel.Medium
     )
-    private set
+        private set
     //We shouldn't be able to change this from outside
 
     private val _uiEvent: Channel<UiEvent> = Channel<UiEvent>()
