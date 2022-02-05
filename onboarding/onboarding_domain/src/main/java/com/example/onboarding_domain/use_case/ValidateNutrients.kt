@@ -11,8 +11,8 @@ class ValidateNutrients {
         fatRatioText: String
     ): Result {
         val carbsRatio = carbsRatioText.toIntOrNull()
-        val proteinRatio = carbsRatioText.toIntOrNull()
-        val fatRatio = carbsRatioText.toIntOrNull()
+        val proteinRatio = proteinRatioText.toIntOrNull()
+        val fatRatio = fatRatioText.toIntOrNull()
 
         if (carbsRatio == null || proteinRatio == null || fatRatio == null) {
             return Result.Error(
