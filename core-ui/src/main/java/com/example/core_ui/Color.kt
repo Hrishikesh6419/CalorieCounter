@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.example.caloriecounter.ui.theme
+package com.example.core_ui
 
 import androidx.compose.ui.graphics.Color
 
