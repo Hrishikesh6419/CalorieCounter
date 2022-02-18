@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.tracker_data.local.TrackerDatabase
 import com.example.tracker_data.remote.OpenFoodApi
 import com.example.tracker_data.repository.TrackerRepositoryImpl
+import com.example.tracker_domain.repository.TrackerRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -58,7 +59,7 @@ object TrackerDataModule {
     fun provideTrackerRepository(
         api: OpenFoodApi,
         db: TrackerDatabase
-    ): TrackerRepositoryImpl {
+    ): TrackerRepository {
         //We don't pass dao here directly for future use. To replace with a fake database for testing
         return TrackerRepositoryImpl(
             dao = db.dao,
