@@ -10,6 +10,7 @@
         <entry key="../../../../layout/compose-model-1645591007472.xml" value="0.5447154471544715" />
         <entry key="../../../../layout/compose-model-1645593131280.xml" value="0.47831978319783197" />
         <entry key="../../../../layout/compose-model-1645675171621.xml" value="0.3956639566395664" />
+        <entry key="../../../../layout/compose-model-1646108488033.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_breakfast.xml" value="0.23229166666666667" />
         <entry key="core/src/main/res/drawable/ic_burger.xml" value="0.23229166666666667" />
         <entry key="core/src/main/res/drawable/ic_dinner.xml" value="0.23229166666666667" />
@@ -18,7 +19,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
